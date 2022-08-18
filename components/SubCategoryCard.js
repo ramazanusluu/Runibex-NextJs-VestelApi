@@ -6,7 +6,7 @@ function SubCategoryCard({ item }) {
   return (
     <>
       <div className="col-sm-6 col-lg-4 col-xl-3">
-        <Link href="/">
+        <Link href={`products/${item.ID}`}>
           <a>
             <div className="card subCategory-card mt-5">
               <div className="card-head subCategory-card-head">
