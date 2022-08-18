@@ -1,6 +1,8 @@
 import Head from "next/head";
+import CategoryCard from "../components/CategoryCard";
 
-export default function Home() {
+export default function Home({ category }) {
+  console.log(category);
   return (
     <div>
       <Head>
@@ -10,9 +12,27 @@ export default function Home() {
       </Head>
 
       <main>
-        <button className="btn btn-primary">Deneme</button>
-        <i className="fa-solid fa-angles-right"></i>
+        <div className="container">
+          <div className="row">
+            {category.Result.TreeList.map(
+              (item, key) =>
+                item.ID < 11 && <CategoryCard key={key} item={item} />
+            )}
+          </div>
+        </div>
       </main>
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch(
+    "https://store.vrunibex.com/mobile2/mbProduct/CategoryList"
+  );
+  const category = await res.json();
+  return {
+    props: {
+      category,
+    },
+  };
+};
