@@ -1,0 +1,8 @@
+.sidebar {
+    width: 350px;
+    background-color: #df2027 !important;
+    position: absolute !important;
+    z-index: 1;
+    overflow: auto;
+    color: white !important;
+  }

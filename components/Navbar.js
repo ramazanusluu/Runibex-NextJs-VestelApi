@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Link from "next/link";
+import Sidebar from "./Sidebar";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
