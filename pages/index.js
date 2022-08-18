@@ -2,7 +2,7 @@ import Head from "next/head";
 import CategoryCard from "../components/CategoryCard";
 
 export default function Home({ category }) {
-  console.log(category);
+  console.log(category.Result.TreeList);
   return (
     <div>
       <Head>
