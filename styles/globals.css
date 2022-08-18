@@ -57,3 +57,16 @@
 a {
   text-decoration: none !important;
 }
+
+/* SubCategory card yapısı icin gerekli css */
+.subCategory-card {
+  border: 1px solid #df2027 !important;
+}
+.subCategory-card-head {
+  box-shadow: rgba(225, 54, 54, 0.2) 0px 7px 29px 0px;
+}
+.subCategory-title {
+  font-weight: bold !important;
+  color: black !important;
+  text-decoration: none !important;
+}

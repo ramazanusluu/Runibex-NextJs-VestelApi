@@ -1,10 +1,21 @@
 import React from "react";
+import SubCategoryCard from "../../components/SubCategoryCard";
 
 export default function SubCategory({ subCategory }) {
   console.log(subCategory);
+  console.log(subCategory.Result.TopCategory.SubCategoryList);
   return (
     <div>
-      <h1>SubCategor Page Component</h1>
+      <div className="container my-5">
+        <div className="row">
+          <h5 className="display-6 text-center">
+            {subCategory.Result.CategoryName}
+          </h5>
+          {subCategory.Result.TopCategory.SubCategoryList.map((item, key) => (
+            <SubCategoryCard key={key} item={item} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
