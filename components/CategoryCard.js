@@ -6,7 +6,7 @@ function CategoryCard({ item }) {
   return (
     <>
       <div className="col-sm-6 col-lg-4 col-xl-3">
-        <Link href="/">
+        <Link href={`/category/${item.ID}`}>
           <a>
             <div className="card category-card mt-5">
               <div className="card-head category-card-head">
