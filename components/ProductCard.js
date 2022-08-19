@@ -44,7 +44,7 @@ function ProductCard({ item }) {
             </div>
           </div>
           <div>
-            <Link href="/">
+            <Link href={`product-detail/${item.ID}`}>
               <button type="button" className="btn-incele">
                 İNCELE
               </button>
