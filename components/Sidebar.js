@@ -2,6 +2,7 @@ import React from "react";
 import style from "../styles/Sidebar.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Loading from "./Loading";
 
 function Sidebar() {
   const [data, setData] = useState(null);
@@ -17,7 +18,7 @@ function Sidebar() {
       });
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loading />;
   if (!data) return <p>No profile data</p>;
 
   console.log(data);
