@@ -1,10 +1,11 @@
 import React from "react";
 import style from "../styles/Sidebar.module.css";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Loading from "./Loading";
+import { useRouter } from "next/router";
 
 function Sidebar() {
+  const router = useRouter();
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
 
@@ -30,21 +31,24 @@ function Sidebar() {
           <ul key={key}>
             {item.ID < 11 && (
               <li>
-                <Link href={`/category/${item.ID}`}>
-                  <a>
-                    <button className="btn btn-danger category">
-                      {item.DisplayName}
-                    </button>
-                  </a>
-                </Link>
+                <button
+                  className="btn btn-danger category"
+                  onClick={() => router.push(`/category/${item.ID}`)}
+                >
+                  {item.DisplayName}
+                </button>
+
                 {item.SubCategoryList.map((item2, key2) => (
                   <ul key={key2}>
                     <li>
-                      <Link href={`products/${item2.ID}`}>
-                        <button className="btn btn-danger subCategory">
-                          {item2.DisplayName}
-                        </button>
-                      </Link>
+                      <button
+                        className="btn btn-danger subCategory"
+                        onClick={() =>
+                          router.push(`/category/products/${item2.ID}`)
+                        }
+                      >
+                        {item2.DisplayName}
+                      </button>
                     </li>
                   </ul>
                 ))}
