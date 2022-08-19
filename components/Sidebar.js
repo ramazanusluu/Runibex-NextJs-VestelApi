@@ -32,17 +32,16 @@ function Sidebar() {
             {item.ID < 11 && (
               <li>
                 <button
-                  className="btn btn-danger category"
+                  className={`btn btn-danger ${style.category}`}
                   onClick={() => router.push(`/category/${item.ID}`)}
                 >
                   {item.DisplayName}
                 </button>
-
                 {item.SubCategoryList.map((item2, key2) => (
                   <ul key={key2}>
                     <li>
                       <button
-                        className="btn btn-danger subCategory"
+                        className={`btn btn-danger ${style.subCategory}`}
                         onClick={() =>
                           router.push(`/category/products/${item2.ID}`)
                         }
