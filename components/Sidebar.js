@@ -1,6 +1,7 @@
 import React from "react";
 import style from "../styles/Sidebar.module.css";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 function Sidebar() {
   const [data, setData] = useState(null);
@@ -24,12 +25,32 @@ function Sidebar() {
   return (
     <div className="container">
       <div className={style.sidebar}>
-        <ul>
-          <li>React</li>
-          <ul>
-            <li>Next</li>
+        {data.Result.TreeList.map((item, key) => (
+          <ul key={key}>
+            {item.ID < 11 && (
+              <li>
+                <Link href={`/category/${item.ID}`}>
+                  <a>
+                    <button className="btn btn-danger category">
+                      {item.DisplayName}
+                    </button>
+                  </a>
+                </Link>
+                {item.SubCategoryList.map((item2, key2) => (
+                  <ul key={key2}>
+                    <li>
+                      <Link href={`products/${item2.ID}`}>
+                        <button className="btn btn-danger subCategory">
+                          {item2.DisplayName}
+                        </button>
+                      </Link>
+                    </li>
+                  </ul>
+                ))}
+              </li>
+            )}
           </ul>
-        </ul>
+        ))}
       </div>
     </div>
   );

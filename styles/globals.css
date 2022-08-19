@@ -110,3 +110,27 @@ a {
 .basket:hover {
   background-color: #f7272f;
 }
+.category {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  background-color: #df2027;
+  border: none;
+}
+.category:hover {
+  color: black;
+  background-color: #df2027;
+  border: none;
+}
+.subCategory {
+  color: white;
+  text-decoration: none;
+  background-color: #df2027;
+  border: none;
+}
+.subCategory:hover {
+  color: black !important;
+  background-color: #df2027;
+  border: none;
+}
