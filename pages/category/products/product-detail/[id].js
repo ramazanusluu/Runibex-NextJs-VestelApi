@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
 
-export default function productDetail() {
+export default function productDetail({ productDetail }) {
+  console.log(productDetail);
   return (
     <div>
       <Head>
@@ -15,3 +16,15 @@ export default function productDetail() {
     </div>
   );
 }
+
+export const getServerSideProps = async (context) => {
+  const res = await fetch(
+    `https://store.vrunibex.com/mobile2/mbProduct/ProductDetail?productId=${context.params.id}`
+  );
+  const productDetail = await res.json();
+  return {
+    props: {
+      productDetail,
+    },
+  };
+};
